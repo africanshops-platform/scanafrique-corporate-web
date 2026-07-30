@@ -1,52 +1,33 @@
 /* ============================================================
-   Design tokens — ported verbatim from the approved artifact
-   (https://claude.ai/code/artifact/bae4e285-c09e-45bc-b259-14c7144e55c7)
+   Design tokens — ported from the approved artifact
+   (https://claude.ai/code/artifact/bae4e285-c09e-45bc-b259-14c7144e55c7).
+   Committed as a single fixed dark theme, not adapted to visitor OS
+   preference — the deep green + near-black palette is the brand identity,
+   not an opt-in dark mode. (The artifact itself supports both, switching
+   on prefers-color-scheme; we're deliberately keeping only the dark half.)
    ============================================================ */
 :root {
-	--ink: #12201b;
-	--ink-soft: #4d6459;
-	--paper: #f6f4ee;
-	--paper-raised: #ffffff;
-	--line: #dcd8cb;
-	--deep: #0f3d2e;
-	--deep-2: #164a38;
-	--orange: #e05e1c;
-	--orange-ink: #9a3d0e;
-	--orange-bg: #fce3d2;
-	--orange-dark: #b84c15;
-	--pulse: #2f8f6c;
-	--upcoming: #3d6ea8;
-	--upcoming-bg: #e6edf7;
-	--ongoing: #b8791a;
-	--ongoing-bg: #faf0dd;
-	--completed: #2f8f5b;
-	--completed-bg: #e3f3ea;
+	--ink: #eaf2ed;
+	--ink-soft: #a8beb3;
+	--paper: #0b1512;
+	--paper-raised: #101d18;
+	--line: #223b31;
+	--deep: #163f2f;
+	--deep-2: #1d5940;
+	--orange: #f0783a;
+	--orange-ink: #ffb98a;
+	--orange-bg: #3a2210;
+	--orange-dark: #ff8c52;
+	--pulse: #4fbd85;
+	--upcoming: #7f9fe0;
+	--upcoming-bg: #1a2440;
+	--ongoing: #e0ac4d;
+	--ongoing-bg: #3a2c10;
+	--completed: #4fbd85;
+	--completed-bg: #123322;
 	--font-display: ui-serif, Georgia, 'Times New Roman', serif;
 	--font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 	--font-mono: ui-monospace, 'SF Mono', 'Cascadia Code', Consolas, monospace;
-}
-
-@media (prefers-color-scheme: dark) {
-	:root {
-		--ink: #eaf2ed;
-		--ink-soft: #a8beb3;
-		--paper: #0b1512;
-		--paper-raised: #101d18;
-		--line: #223b31;
-		--deep: #163f2f;
-		--deep-2: #1d5940;
-		--orange: #f0783a;
-		--orange-ink: #ffb98a;
-		--orange-bg: #3a2210;
-		--orange-dark: #ff8c52;
-		--pulse: #4fbd85;
-		--upcoming: #7f9fe0;
-		--upcoming-bg: #1a2440;
-		--ongoing: #e0ac4d;
-		--ongoing-bg: #3a2c10;
-		--completed: #4fbd85;
-		--completed-bg: #123322;
-	}
 }
 
 * {
@@ -57,7 +38,7 @@
 
 html {
 	scroll-behavior: smooth;
-	color-scheme: light dark;
+	color-scheme: dark;
 }
 
 body {
@@ -76,6 +57,7 @@ img {
 
 a {
 	color: inherit;
+	text-decoration: none;
 }
 
 button {
