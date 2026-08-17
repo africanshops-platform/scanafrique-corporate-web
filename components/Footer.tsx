@@ -9,6 +9,7 @@ export default function Footer() {
 				<span>Scanafrique Ltd</span>
 			</div>
 			<div>Abuja, Nigeria · hello@scanafrique.com</div>
+			<div>RC 7128903 · TIN 31515265-0001</div>
 			<div>&copy; {year} Scanafrique Ltd — IT · Construction · General Supplies</div>
 		</footer>
 	);

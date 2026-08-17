@@ -64,6 +64,20 @@ export default async function ContactPage() {
 								</div>
 							</div>
 						)}
+						<div className="contact-item">
+							<div className="ic">§</div>
+							<div>
+								<h3>Legal</h3>
+								<p>
+									Scanafrique Ltd is a private company limited by shares, incorporated in Nigeria
+									under the Companies and Allied Matters Act 2020.
+									<br />
+									CAC Registration No. 7128903 · Incorporated 7 September 2023, Abuja
+									<br />
+									Tax Identification Number: 31515265-0001
+								</p>
+							</div>
+						</div>
 					</div>
 					<ContactForm contactEmail={email} />
 				</div>
