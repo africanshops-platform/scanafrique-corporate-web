@@ -2,8 +2,9 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import ReactMarkdown from 'react-markdown';
 import { getBlogPostBySlug } from '@/lib/api';
-import { formatFullDate } from '@/lib/labels';
+import { excerpt, formatFullDate } from '@/lib/labels';
 
 type Params = { slug: string };
 
@@ -13,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
 	if (!post) return { title: 'Post not found' };
 	return {
 		title: post.title,
-		description: post.body.slice(0, 160),
+		description: excerpt(post.body, 160),
 		openGraph: post.coverImage ? { images: [post.coverImage] } : undefined,
 	};
 }
@@ -53,7 +54,9 @@ export default async function NewsDetailPage({ params }: { params: Promise<Param
 					</div>
 				)}
 
-				<div className="prose">{post.body}</div>
+				<div className="prose">
+					<ReactMarkdown>{post.body}</ReactMarkdown>
+				</div>
 			</div>
 		</section>
 	);
