@@ -43,3 +43,26 @@ export function formatFullDate(dateString?: string): string | null {
 	if (Number.isNaN(date.getTime())) return null;
 	return date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 }
+
+/** Blog post `body` is markdown source (rendered via react-markdown on the
+ * post page). Card excerpts and <meta description> want plain text, so this
+ * strips the common markdown syntax rather than truncating raw `## `/`**`
+ * characters into the excerpt. */
+export function stripMarkdown(markdown: string): string {
+	return markdown
+		.replace(/^#{1,6}\s+/gm, '')
+		.replace(/(\*\*|__)(.*?)\1/g, '$2')
+		.replace(/(\*|_)(.*?)\1/g, '$2')
+		.replace(/!\[.*?\]\(.*?\)/g, '')
+		.replace(/\[(.*?)\]\(.*?\)/g, '$1')
+		.replace(/^>\s?/gm, '')
+		.replace(/^[-*+]\s+/gm, '')
+		.replace(/`{1,3}([^`]*)`{1,3}/g, '$1')
+		.replace(/\r?\n+/g, ' ')
+		.trim();
+}
+
+export function excerpt(markdown: string, length: number): string {
+	const plain = stripMarkdown(markdown);
+	return plain.length > length ? `${plain.slice(0, length)}…` : plain;
+}
