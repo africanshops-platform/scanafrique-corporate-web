@@ -867,7 +867,53 @@ button {
 .news-post .prose {
 	font-size: 16px;
 	max-width: 70ch;
-	white-space: pre-wrap;
+	line-height: 1.75;
+	color: var(--ink);
+}
+.news-post .prose h2 {
+	font-size: 1.5em;
+	font-weight: 700;
+	margin: 1.6em 0 0.6em;
+	color: var(--ink);
+}
+.news-post .prose h3 {
+	font-size: 1.25em;
+	font-weight: 700;
+	margin: 1.4em 0 0.5em;
+	color: var(--ink);
+}
+.news-post .prose p {
+	margin: 0 0 1.1em;
+}
+.news-post .prose strong {
+	color: var(--ink);
+	font-weight: 700;
+}
+.news-post .prose ul,
+.news-post .prose ol {
+	margin: 0 0 1.1em;
+	padding-left: 1.4em;
+}
+.news-post .prose li {
+	margin-bottom: 0.5em;
+}
+.news-post .prose a {
+	color: var(--orange-ink);
+	text-decoration: underline;
+}
+.news-post .prose blockquote {
+	margin: 0 0 1.1em;
+	padding: 12px 18px;
+	border-left: 3px solid var(--orange);
+	background: var(--orange-bg);
+	border-radius: 0 8px 8px 0;
+	color: var(--orange-ink);
+}
+.news-post .prose code {
+	background: var(--orange-bg);
+	padding: 2px 6px;
+	border-radius: 4px;
+	font-size: 0.9em;
 }
 
 /* ===== Contact ===== */
